@@ -1,16 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Studio42 Web Development
-        </p>
+      <header>
+        <p>Studio42 Web Development</p>
       </header>
+      <Navbar />
+      <Home />
+      <About />
+      <Projects />
     </div>
   );
 }
