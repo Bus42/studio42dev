@@ -5,7 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import "materialize-css/dist/css/materialize.min.css"
 import Home from "./components/home/Home";
 import About from "./components/About";

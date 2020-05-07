@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./home.scss"
 
 const Home = () => {
-    return ( <main>
-        <div id="home">
-            <h1>Home component</h1>
-        </div>
-    </main> );
-}
- 
+  return (
+    <div id="home">
+      <h1 className="center-align" >Progressive Web Application Development</h1>
+    </div>
+  );
+};
+
 export default Home;
