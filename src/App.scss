@@ -6,4 +6,37 @@
     padding: 0;
     box-sizing: border-box;
     --header-font: 'Ubuntu', sans-serif;
+    --grey: #757575;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+}
+
+h1 {
+    font-size: 24px !important;
+}
+h2 {
+    font-size: 22px !important;
+}
+h3 { 
+    font-size: 20px !important;
+}
+h4 {
+    font-size: 18px !important;
+}
+h5 {
+    font-size: 16px !important;
+}
+h6 {
+    font-size: 14px !important;
+}
+.strip {
+    display: block;
+    height: 350px;
+    width: 100%;
+    background-color: var(--grey);
+}
+.with-opacity {
+    opacity: 0.85;
 }

@@ -1,6 +1,17 @@
-#home {
-    font-family: var(--header-font);
-    h1 {
-        font-size: 24px;
-    }
-}
+.home-grid-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: 350px;
+    grid-template-areas: "text image";
+  }
+  
+  .home-text { grid-area: text; }
+  
+  .home-image { grid-area: image; }
+
+  @media all and (max-width: 992px) {
+      .home-grid-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+      }
+  }

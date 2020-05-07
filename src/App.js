@@ -11,6 +11,7 @@ import Home from "./components/home/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/navbar/Navbar";
+import Contact from "./components/contact/Contact";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" exact><Home/></Route>
             <Route path="/Projects"><Projects/></Route>
             <Route path="/About"><About/></Route>
+            <Route path="/Contact"><Contact/></Route>
           </Switch>
         </div>
       </Router>
