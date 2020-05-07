@@ -5,10 +5,10 @@ import {
   Route
 } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./components/home/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 
 function App(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
