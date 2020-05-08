@@ -1,11 +1,20 @@
-import React from 'react';
+import React from "react";
+import "./footer.scss";
 
 const Footer = () => {
-    return ( <div className="row black white-text">
-        <div className="col s12">
-            <p className="center-align">Footer</p>
+  return (
+    <div className="footer-grid-container">
+      <div className="footer-gutter_left"></div>
+      <div className="footer-gutter_right"></div>
+      <div className="footer-center">
+        <div className="footer-center_bottom"></div>
+        <div className="footer-center_top"></div>
+        <div className="footer-center_main">
+            <p className="center-align white-text text-darken-2">Footer</p>
         </div>
-    </div> );
-}
- 
+      </div>
+    </div>
+  );
+};
+
 export default Footer;
