@@ -4,6 +4,10 @@ import "./home.scss";
 import responsive from "../../images/responsive.svg";
 import keyboard from "../../images/keyboard.jpg";
 import code from "../../images/code.jpg";
+import react from "../../images/react.svg";
+import macbook from "../../images/macbook.jpg";
+
+// TODO: Convert strips to components with two props: header and text
 
 const Home = () => {
   useEffect(() => {
@@ -42,6 +46,36 @@ const Home = () => {
       <div className="parallax-container">
         <div className="parallax">
           <img src={code} alt="screen with lines of code" />
+        </div>
+      </div>
+      <div className="section white">
+        <div className="home-grid-container_2">
+          <div className="home-text_2">
+            <div className="container">
+              <h2>Built with React</h2>
+              <br></br>
+              <p>
+                React is a framework created by Jordan Walke, a software
+                engineer at Facebook, that allows for much faster loading and
+                navigation of web pages than traditional (old school) websites
+                and allows for the creation of reusable components to ensure a
+                consistent look across all of the pages on your website or
+                application.
+              </p>
+            </div>
+          </div>
+          <div className="home-image_2 valign-wrapper">
+            <img
+              style={{ maxWidth: "100%" }}
+              src={react}
+              alt="multiple size displays"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="parallax-container">
+        <div className="parallax">
+          <img src={macbook} alt="screen with lines of code" />
         </div>
       </div>
     </div>

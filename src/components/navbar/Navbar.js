@@ -11,7 +11,7 @@ useEffect(() => {
     <div id="navbar">
       <nav className="grey darken-3">
         <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">Studio42<span className="hide-on-med-down" > Web </span>Dev<span className="hide-on-med-down" >elopment</span></Link>
+          <Link to="/" className="brand-logo">Studio42Dev</Link>
           <a href="#" data-target="nav-mobile" className="sidenav-trigger right">
             <i className="material-icons">menu</i>
           </a>
