@@ -6,6 +6,7 @@ import keyboard from "../../images/keyboard.jpg";
 import code from "../../images/code.jpg";
 import react from "../../images/react.svg";
 import macbook from "../../images/macbook.jpg";
+import firebase_logo from "../../images/firebase.png";
 
 // TODO: Convert strips to components with two props: header and text
 
@@ -76,6 +77,30 @@ const Home = () => {
       <div className="parallax-container">
         <div className="parallax">
           <img src={macbook} alt="screen with lines of code" />
+        </div>
+      </div>
+      <div className="section white">
+        <div className="home-grid-container">
+          <div className="home-text">
+            <div className="container">
+              <h2>Firebase Hosting</h2>
+              <br></br>
+              <p>
+                Firebase provides cloud storage, real-time database,
+                authentication, cloud functions, and much more. My custom-built
+                applications are hosted on Firebase for unrivaled speed and
+                security. All assets are served over HTTPS, protecting the
+                integrity of your website and the security of your users.
+              </p>
+            </div>
+          </div>
+          <div className="home-image valign-wrapper">
+            <img
+              style={{ maxWidth: "100%" }}
+              src={firebase_logo}
+              alt="multiple size displays"
+            />
+          </div>
         </div>
       </div>
     </div>
