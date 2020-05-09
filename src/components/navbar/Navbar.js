@@ -11,10 +11,10 @@ useEffect(() => {
     <div id="navbar">
       <nav className="grey darken-3">
         <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">Studio42</Link>
-          <p data-target="nav-mobile" className="sidenav-trigger right">
+          <Link to="/" className="brand-logo">Studio42Dev</Link>
+          <a href="#" data-target="nav-mobile" className="sidenav-trigger right">
             <i className="material-icons">menu</i>
-          </p>
+          </a>
           <ul className="right hide-on-med-and-down">
             <li>
               <Link to="/">Home</Link>
@@ -24,6 +24,9 @@ useEffect(() => {
             </li>
             <li>
               <Link to="/About">About</Link>
+            </li>
+            <li>
+              <Link to="/Contact">Contact</Link>
             </li>
           </ul>
         </div>
