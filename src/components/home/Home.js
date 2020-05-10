@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 import "./home.scss";
+
+//grid images
 import responsive from "../../images/responsive.svg";
+import react from "../../images/react.svg";
+import firebase_logo from "../../images/firebase.png";
+
+//parallax divs
 import keyboard from "../../images/keyboard.jpg";
 import code from "../../images/code.jpg";
-import react from "../../images/react.svg";
 import macbook from "../../images/macbook.jpg";
-import firebase_logo from "../../images/firebase.png";
 
 // TODO: Convert strips to components with two props: header and text
 
@@ -37,7 +41,7 @@ const Home = () => {
           </div>
           <div className="home-image valign-wrapper">
             <img
-              style={{ maxWidth: "100%" }}
+              style={{width: "100%"}}
               src={responsive}
               alt="multiple size displays"
             />
@@ -67,7 +71,7 @@ const Home = () => {
           </div>
           <div className="home-image_2 valign-wrapper">
             <img
-              style={{ maxWidth: "100%" }}
+            style={{width: "100%"}}
               src={react}
               alt="multiple size displays"
             />
@@ -94,11 +98,11 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="home-image valign-wrapper">
+          <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} className="home-image valign-wrapper">
             <img
-              style={{ maxWidth: "100%" }}
+            style={{height: "120%"}}
               src={firebase_logo}
-              alt="multiple size displays"
+              alt="Google Firebase logo"
             />
           </div>
         </div>

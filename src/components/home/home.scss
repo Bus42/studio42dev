@@ -14,12 +14,13 @@
   grid-area: text;
 }
 .home-text_2 {
-    grid-area: text_2;
+  grid-area: text_2;
+}
+.home-image,
+.home-image_2 {
+  img {
+    max-height: 50vh;
   }
-.home-image, .home-image_2 {
-    img {
-        max-height: 50vh;
-    }
 }
 .home-image {
   grid-area: image;
@@ -29,24 +30,29 @@
 }
 .parallax-container {
   height: 350px;
+  .parallax {
+    img {
+      width: 100vw;
+    }
+  }
 }
 @media all and (max-width: 992px) {
-    .home-grid-container,
-    .home-grid-container_2 {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-    }
-    .parallax-container {
-      height: 33vh;
-    }
+  .home-grid-container,
+  .home-grid-container_2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-  @media all and (max-width: 550px) {
-    .home-grid-container,
-    .home-grid-container_2 {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
+  .parallax-container {
+    height: 33vh;
   }
+}
+@media all and (max-width: 550px) {
+  .home-grid-container,
+  .home-grid-container_2 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
