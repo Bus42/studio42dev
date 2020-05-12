@@ -5,7 +5,7 @@ import "./home.scss";
 //grid images
 import responsive from "../../images/responsive.svg";
 import react from "../../images/react.svg";
-import firebase_logo from "../../images/firebase.png";
+import firebase_logo from "../../images/firebase.svg";
 
 //parallax divs
 import keyboard from "../../images/keyboard.jpg";
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
           <div className="home-image valign-wrapper">
             <img
-              style={{width: "100%"}}
+              style={{ width: "100%" }}
               src={responsive}
               alt="multiple size displays"
             />
@@ -71,7 +71,7 @@ const Home = () => {
           </div>
           <div className="home-image_2 valign-wrapper">
             <img
-            style={{width: "100%"}}
+              style={{ width: "100%" }}
               src={react}
               alt="multiple size displays"
             />
@@ -87,20 +87,27 @@ const Home = () => {
         <div className="home-grid-container">
           <div className="home-text">
             <div className="container">
-              <h2>Firebase Hosting</h2>
+              <h2>Built with Firebase</h2>
               <br></br>
               <p>
                 Firebase provides cloud storage, real-time database,
-                authentication, cloud functions, and much more. My custom-built
+                authentication, hosting, and much more. My custom-built
                 applications are hosted on Firebase for unrivaled speed and
                 security. All assets are served over HTTPS, protecting the
                 integrity of your website and the security of your users.
               </p>
             </div>
           </div>
-          <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} className="home-image valign-wrapper">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+            className="home-image valign-wrapper"
+          >
             <img
-            style={{height: "120%"}}
+              style={{ width: "100%" }}
               src={firebase_logo}
               alt="Google Firebase logo"
             />
