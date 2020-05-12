@@ -30,18 +30,16 @@ const Home = () => {
         <div className="home-grid-container">
           <div className="home-text">
             <div className="container">
-              <h2>Progressive Web Application development for today's users</h2>
+              <h2>Development for today's users</h2>
               <br></br>
               <p>
-                At Studio42, I design websites for every display size and create
-                applications that can be downloaded to your Android or Apple
-                device just like a native app to keep your users engaged.
+                I create websites and applications for every display size that can be downloaded to your users' Android or Apple
+                devices.
               </p>
             </div>
           </div>
           <div className="home-image valign-wrapper">
             <img
-              style={{ width: "100%" }}
               src={responsive}
               alt="multiple size displays"
             />
@@ -71,7 +69,6 @@ const Home = () => {
           </div>
           <div className="home-image_2 valign-wrapper">
             <img
-              style={{ width: "100%" }}
               src={react}
               alt="multiple size displays"
             />
@@ -107,7 +104,6 @@ const Home = () => {
             className="home-image valign-wrapper"
           >
             <img
-              style={{ width: "100%" }}
               src={firebase_logo}
               alt="Google Firebase logo"
             />
