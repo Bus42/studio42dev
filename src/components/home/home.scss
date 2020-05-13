@@ -50,7 +50,7 @@
     div {
       img {
         height: var(--strip-height);
-        max-width: 100vw;
+        width: auto;
       }
     }
   }
@@ -66,7 +66,8 @@
     div {
       div {
         img {
-          height: var(--strip-height);
+          max-width: 90vw;
+          height: auto;
         }
         h2 {
           text-align: center;
