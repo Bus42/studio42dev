@@ -17,7 +17,7 @@ import macbook from "../../images/macbook.jpg";
 const Home = () => {
   useEffect(() => {
     const elems = document.querySelectorAll(".parallax");
-    M.Parallax.init(elems, { responsiveThreshold: 500 });
+    M.Parallax.init(elems);
   });
   return (
     <div id="home">

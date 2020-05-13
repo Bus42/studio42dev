@@ -63,15 +63,18 @@
   }
   .section {
     height: fit-content;
-  }
-  div {
     div {
-      img {
-        height: var(--strip-height);
-      }
-      h2 {
-        text-align: center;
+      div {
+        img {
+          height: var(--strip-height);
+        }
+        h2 {
+          text-align: center;
+        }
       }
     }
+  }
+  .parallax-container {
+    height: 40vw;
   }
 }
