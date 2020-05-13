@@ -49,7 +49,16 @@ const Footer = () => {
       <div className="footer-copyright">
         <div className="container">
           © 2020 Studio42Dev
-          <button className="btn waves-effect waves-light grey darken-3 white-text text-darken-2 right">
+          <button
+          className="btn waves-effect waves-light grey darken-3 white-text text-darken-2 right"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }}
+          >
             <i className="material-icons left">arrow_upward</i>Back to top
           </button>
         </div>
