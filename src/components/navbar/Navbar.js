@@ -12,9 +12,9 @@ useEffect(() => {
       <nav className="grey darken-3">
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo">Studio42Dev</Link>
-          <a href="#" data-target="nav-mobile" className="sidenav-trigger right">
+          <span href="#" data-target="nav-mobile" className="sidenav-trigger right">
             <i className="material-icons">menu</i>
-          </a>
+          </span>
           <ul className="right hide-on-med-and-down">
             <li>
               <Link to="/">Home</Link>
