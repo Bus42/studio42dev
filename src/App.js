@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Navbar from "./components/navbar/Navbar";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import NotFound from "./NotFound";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/Contact">
               <Contact />
+            </Route>
+            <Route path="*" >
+              <NotFound />
             </Route>
           </Switch>
           <Footer />
