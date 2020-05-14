@@ -8,24 +8,17 @@ import react from "../../images/react.svg";
 import firebase_logo from "../../images/firebase.svg";
 
 //parallax divs
-import keyboard from "../../images/keyboard.jpg";
-import code from "../../images/code.jpg";
-import macbook from "../../images/macbook.jpg";
-
-// TODO: Convert strips to components with two props: header and text
+import ParallaxStrip from "./ParallaxStip";
 
 const Home = () => {
   useEffect(() => {
     const elems = document.querySelectorAll(".parallax");
     M.Parallax.init(elems);
   });
+
   return (
     <div id="home">
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={keyboard} alt="laptop keyboard closeup" />
-        </div>
-      </div>
+      <ParallaxStrip img="keyboard" alt="closeup of backlit keyboard" />
       <div className="section white">
         <div className="home-grid-container">
           <div className="home-text">
@@ -33,24 +26,17 @@ const Home = () => {
               <h2>Development for today's users</h2>
               <br></br>
               <p>
-                I create websites and applications for every display size that can be downloaded to your users' Android or Apple
-                devices.
+                I create websites and applications for every display size that
+                can be downloaded to your users' Android or Apple devices.
               </p>
             </div>
           </div>
           <div className="home-image valign-wrapper">
-            <img
-              src={responsive}
-              alt="multiple size displays"
-            />
+            <img src={responsive} alt="multiple size displays" />
           </div>
         </div>
       </div>
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={code} alt="screen with lines of code" />
-        </div>
-      </div>
+      <ParallaxStrip img="code" alt="screen with lines of React.js code" />
       <div className="section white">
         <div className="home-grid-container_2">
           <div className="home-text_2">
@@ -68,18 +54,14 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image_2 valign-wrapper">
-            <img
-              src={react}
-              alt="multiple size displays"
-            />
+            <img src={react} alt="multiple size displays" />
           </div>
         </div>
       </div>
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={macbook} alt="screen with lines of code" />
-        </div>
-      </div>
+      <ParallaxStrip
+        img="macbook"
+        alt="macbook open with server code displayed"
+      />
       <div className="section white">
         <div className="home-grid-container">
           <div className="home-text">
@@ -103,10 +85,7 @@ const Home = () => {
             }}
             className="home-image valign-wrapper"
           >
-            <img
-              src={firebase_logo}
-              alt="Google Firebase logo"
-            />
+            <img src={firebase_logo} alt="Google Firebase logo" />
           </div>
         </div>
       </div>

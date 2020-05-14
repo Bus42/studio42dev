@@ -33,7 +33,7 @@ const About = () => {
           }}
         >
           <div
-            class="fb-page"
+            className="fb-page"
             data-tabs="timeline"
             data-href="https://www.facebook.com/pg/studio42dev/"
             data-width="380"
