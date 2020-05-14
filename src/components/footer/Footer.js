@@ -23,22 +23,22 @@ const Footer = () => {
             <h5 className="white-text">Links</h5>
             <ul>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="https://firebase.google.com/?authuser=0" target="blank">
                   Firebase
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="https://reactjs.org/" target="blank">
                   React
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="https://materializecss.com/" target="blank">
                   MaterializeCSS
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="https://www.freecodecamp.org/" target="blank">
                   FreeCodeCamp
                 </a>
               </li>
