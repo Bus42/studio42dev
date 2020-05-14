@@ -1,54 +1,42 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 import "./home.scss";
-import responsive from "../../images/responsive.svg";
-import keyboard from "../../images/keyboard.jpg";
-import code from "../../images/code.jpg";
-import react from "../../images/react.svg";
-import macbook from "../../images/macbook.jpg";
-import firebase_logo from "../../images/firebase.png";
 
-// TODO: Convert strips to components with two props: header and text
+//grid images
+import responsive from "../../images/responsive.svg";
+import react from "../../images/react.svg";
+import firebase_logo from "../../images/firebase.svg";
+
+//parallax divs
+import ParallaxStrip from "./ParallaxStip";
 
 const Home = () => {
   useEffect(() => {
     const elems = document.querySelectorAll(".parallax");
-    M.Parallax.init(elems, { responsiveThreshold: 500 });
+    M.Parallax.init(elems);
   });
+
   return (
     <div id="home">
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={keyboard} alt="laptop keyboard closeup" />
-        </div>
-      </div>
+      <ParallaxStrip img="keyboard" alt="closeup of backlit keyboard" />
       <div className="section white">
         <div className="home-grid-container">
           <div className="home-text">
             <div className="container">
-              <h2>Progressive Web Application development for today's users</h2>
+              <h2>Development for today's users</h2>
               <br></br>
               <p>
-                At Studio42, I design websites for every display size and create
-                applications that can be downloaded to your Android or Apple
-                device just like a native app to keep your users engaged.
+                I create websites and applications for every display size that
+                can be downloaded to your users' Android or Apple devices.
               </p>
             </div>
           </div>
           <div className="home-image valign-wrapper">
-            <img
-              style={{ maxWidth: "100%" }}
-              src={responsive}
-              alt="multiple size displays"
-            />
+            <img src={responsive} alt="multiple size displays" />
           </div>
         </div>
       </div>
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={code} alt="screen with lines of code" />
-        </div>
-      </div>
+      <ParallaxStrip img="code" alt="screen with lines of React.js code" />
       <div className="section white">
         <div className="home-grid-container_2">
           <div className="home-text_2">
@@ -66,40 +54,38 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image_2 valign-wrapper">
-            <img
-              style={{ maxWidth: "100%" }}
-              src={react}
-              alt="multiple size displays"
-            />
+            <img src={react} alt="multiple size displays" />
           </div>
         </div>
       </div>
-      <div className="parallax-container">
-        <div className="parallax">
-          <img src={macbook} alt="screen with lines of code" />
-        </div>
-      </div>
+      <ParallaxStrip
+        img="macbook"
+        alt="macbook open with server code displayed"
+      />
       <div className="section white">
         <div className="home-grid-container">
           <div className="home-text">
             <div className="container">
-              <h2>Firebase Hosting</h2>
+              <h2>Built with Firebase</h2>
               <br></br>
               <p>
                 Firebase provides cloud storage, real-time database,
-                authentication, cloud functions, and much more. My custom-built
+                authentication, hosting, and much more. My custom-built
                 applications are hosted on Firebase for unrivaled speed and
                 security. All assets are served over HTTPS, protecting the
                 integrity of your website and the security of your users.
               </p>
             </div>
           </div>
-          <div className="home-image valign-wrapper">
-            <img
-              style={{ maxWidth: "100%" }}
-              src={firebase_logo}
-              alt="multiple size displays"
-            />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+            className="home-image valign-wrapper"
+          >
+            <img src={firebase_logo} alt="Google Firebase logo" />
           </div>
         </div>
       </div>

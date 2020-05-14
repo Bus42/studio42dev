@@ -1,8 +1,22 @@
 {
   "short_name": "Studio42Dev",
-  "name": "Studio 42 Web Development",
+  "name": "Studio42 Progressive Web Application Development",
+  "description": "Custom-built Progressive Web Applications designed for accessibility and speedyy",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x137"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x366"
+    }
+  ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#424242",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#424242"
 }
