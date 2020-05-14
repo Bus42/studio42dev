@@ -1,17 +1,17 @@
 {
   "short_name": "Studio42Dev",
   "name": "Studio42 Progressive Web Application Development",
-  "description": "Custom-built Progressive Web Applications designed for accessibility and speedyy",
+  "description": "Custom-built Progressive Web Applications designed for accessibility and speed.",
   "icons": [
     {
       "src": "/images/icons-192.png",
       "type": "image/png",
-      "sizes": "192x137"
+      "sizes": "192x192"
     },
     {
       "src": "/images/icons-512.png",
       "type": "image/png",
-      "sizes": "512x366"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
