@@ -8,7 +8,7 @@ import react from "../../images/react.svg";
 import firebase_logo from "../../images/firebase.svg";
 
 //parallax divs
-import ParallaxStrip from "./ParallaxStip";
+import ParallaxStrip from "./ParallaxStrip";
 
 const Home = () => {
   useEffect(() => {
