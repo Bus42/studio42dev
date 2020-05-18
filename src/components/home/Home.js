@@ -14,6 +14,10 @@ const Home = () => {
   useEffect(() => {
     const elems = document.querySelectorAll(".parallax");
     M.Parallax.init(elems);
+    const abortcontroller = new AbortController();
+    return function cleanup() {
+      abortcontroller.abort();
+    }
   });
 
   return (
