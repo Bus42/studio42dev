@@ -62,6 +62,9 @@ const Navbar = () => {
             About
           </Link>
         </li>
+        <li>
+          <Link to="/Contact" className="white-text text-darken-2">Contact</Link>
+        </li>
       </ul>
     </div>
   );
