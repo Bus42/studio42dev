@@ -7,9 +7,13 @@ export default function Contact() {
     lastName: "Last Name",
     email: "email@provider.com",
     reason: "default",
+    comments: ""
   });
 
   const handleSubmit = () => {
+    if (document.querySelector(".invalid")) {
+      console.log("invalid input");
+    }
     console.log(data);
   };
 
@@ -27,6 +31,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit}>
               <div className="input-field">
                 <input
+                  className="validate"
                   onChange={(e) => {
                     let newData = { ...data };
                     newData.firstName = e.target.value;
@@ -39,6 +44,7 @@ export default function Contact() {
                   placeholder={data.firstName}
                 />
                 <input
+                  className="validate"
                   onChange={(e) => {
                     let newData = { ...data };
                     newData.lastName = e.target.value;
@@ -54,6 +60,7 @@ export default function Contact() {
               </div>
               <div className="input-field">
                 <input
+                  className="validate"
                   onChange={(e) => {
                     let newData = { ...data };
                     newData.email = e.target.value;
@@ -86,6 +93,20 @@ export default function Contact() {
                   <option value="feedback">I have a comment</option>
                 </select>
                 <label>How can I help?</label>
+              </div>
+              <div className="row">
+                <div className="input-field col s12">
+                  <textarea
+                  onChange={(e) => {
+                    let newData = { ...data };
+                    newData.comments = e.target.value;
+                    setData(newData);
+                  }}
+                    id="comments"
+                    className="materialize-textarea"
+                  ></textarea>
+                  <label for="comments">Additional Comments</label>
+                </div>
               </div>
             </form>
             <button
