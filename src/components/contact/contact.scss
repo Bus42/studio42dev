@@ -1,0 +1,31 @@
+#contact{
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 0;
+    background-image: url('../../images/parallax_images/code/code.jpg');
+    background-size: cover;
+}
+
+@media all and (min-width: 1920px) and (max-width: 3839px)  {
+    #contact {
+        background-image: url('../../images/parallax_images/code/code_3840.jpg');
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1919px)  {
+    #contact {
+        background-image: url('../../images/parallax_images/code/code_1920.jpg');
+    }
+}
+@media all and (min-width: 512px) and (max-width: 1023px)  {
+    #contact {
+        background-image: url('../../images/parallax_images/code/code_1024.jpg');
+    }
+}
+@media all and (max-width: 511px)  {
+    #contact {
+        background-image: url('../../images/parallax_images/code/code_512.jpg');
+    }
+}
