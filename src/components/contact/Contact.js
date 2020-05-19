@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./contact.scss";
 
 export default function Contact() {
@@ -7,14 +8,32 @@ export default function Contact() {
     lastName: "Last Name",
     email: "email@provider.com",
     reason: "default",
-    comments: ""
+    comments: "",
   });
+
+  const sendEmail = () => {
+    emailjs
+      .send(
+        "default_service",
+        "feedback", data,
+        "user_E6Sw8jgkSYgDQSn8TxTYv"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handleSubmit = () => {
     if (document.querySelector(".invalid")) {
       console.log("invalid input");
+    } else {
+      sendEmail();
     }
-    console.log(data);
   };
 
   return (
@@ -28,7 +47,7 @@ export default function Contact() {
             Fill out the form below and I will contact you as soon as possible.
           </p>
           <div className="card-content">
-            <form onSubmit={handleSubmit}>
+            <form id="contact_form" onSubmit={handleSubmit}>
               <div className="input-field">
                 <input
                   className="validate"
@@ -56,7 +75,7 @@ export default function Contact() {
                   name="lastName"
                   placeholder={data.lastName}
                 />
-                <label>What's your name?</label>
+                <label className="active" >What's your name?</label>
               </div>
               <div className="input-field">
                 <input
@@ -85,27 +104,31 @@ export default function Contact() {
                   <option value="default" disabled>
                     Choose an option
                   </option>
-                  <option value="existing website">
+                  <option value="needs some work on their website">
                     My website needs some work
                   </option>
-                  <option value="new website">I need a website</option>
-                  <option value="inquiry">I'd like to ask a question</option>
-                  <option value="feedback">I have a comment</option>
+                  <option value="needs a new website">I need a website</option>
+                  <option value="has a question for you">
+                    I'd like to ask a question
+                  </option>
+                  <option value="has some feedback for you">
+                    I have a comment
+                  </option>
                 </select>
                 <label>How can I help?</label>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <textarea
-                  onChange={(e) => {
-                    let newData = { ...data };
-                    newData.comments = e.target.value;
-                    setData(newData);
-                  }}
+                    onChange={(e) => {
+                      let newData = { ...data };
+                      newData.comments = e.target.value;
+                      setData(newData);
+                    }}
                     id="comments"
                     className="materialize-textarea"
                   ></textarea>
-                  <label for="comments">Additional Comments</label>
+                  <label htmlFor="comments">Additional Comments</label>
                 </div>
               </div>
             </form>
