@@ -1,12 +1,13 @@
 #contact{
-    background-image: url('../../images/parallax_images/code/code.jpg');
+    background-image: url('../../images/pen/pen.jpg');
     background-size: cover;
+    background-position: center;
     background-color: var(--grey);
     margin: 0px;
     padding: 60px 0;
 }
 
-input {
+input, textarea {
     border-radius: 5px !important;
     color: whitesmoke;
 }
@@ -19,23 +20,23 @@ label {
     color: whitesmoke !important;
 }
 
-@media all and (min-width: 1920px) and (max-width: 3839px)  {
-    #contact {
-        background-image: url('../../images/parallax_images/code/code_3840.jpg');
-    }
-}
-@media all and (min-width: 1024px) and (max-width: 1919px)  {
-    #contact {
-        background-image: url('../../images/parallax_images/code/code_1920.jpg');
-    }
-}
-@media all and (min-width: 512px) and (max-width: 1023px)  {
-    #contact {
-        background-image: url('../../images/parallax_images/code/code_1024.jpg');
-    }
-}
-@media all and (max-width: 511px)  {
-    #contact {
-        background-image: url('../../images/parallax_images/code/code_512.jpg');
-    }
-}
+// @media all and (min-width: 1920px) and (max-width: 3839px)  {
+//     #contact {
+//         background-image: url('../../images/pen/pen_3840.jpg');
+//     }
+// }
+// @media all and (min-width: 1024px) and (max-width: 1919px)  {
+//     #contact {
+//         background-image: url('../../images/pen/pen_1920.jpg');
+//     }
+// }
+// @media all and (min-width: 512px) and (max-width: 1023px)  {
+//     #contact {
+//         background-image: url('../../images/pen/pen_1024.jpg');
+//     }
+// }
+// @media all and (max-width: 511px)  {
+//     #contact {
+//         background-image: url('../../images/pen/pen_512.jpg');
+//     }
+// }
