@@ -77,13 +77,14 @@ export default function Contact() {
               newData.email = e.target.value;
               setData(newData);
             }}
+            required
             type="email"
             name="email"
             placeholder={data.email}
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" className="active" htmlFor="reason">
+          <label className="active" htmlFor="reason">
             How can I help?
           </label>
           <select
@@ -93,7 +94,6 @@ export default function Contact() {
               newData.reason = e.target.value;
               setData(newData);
             }}
-            required
             defaultValue={data.reason}
           >
             <option value="default" disabled>

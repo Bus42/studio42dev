@@ -1,6 +1,6 @@
 #contact{
     background-image: url('../../images/pen/pen.jpg');
-    background-size: 100vh;
+    background-size: 100vw;
     background-position: center top;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -20,6 +20,10 @@ input, textarea {
 
 label {
     color: whitesmoke !important;
+}
+
+input.validate.valid {
+    opacity: .65;
 }
 
 // @media all and (min-width: 1920px) and (max-width: 3839px)  {
