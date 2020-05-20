@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "materialize-css/dist/css/materialize.min.css";
 import Home from "./components/home/Home";
-import About from "./components/About";
+import About from "./components/about/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/navbar/Navbar";
 import Contact from "./components/contact/Contact";
