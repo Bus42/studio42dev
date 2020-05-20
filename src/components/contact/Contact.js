@@ -13,8 +13,8 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    const elems = document.querySelectorAll(".select");
-    M.FormSelect.init(elems, { classes: "white-text text-darken-3" });
+    const selectEls = document.querySelectorAll(".select");
+    M.FormSelect.init(selectEls, { classes: "white-text text-darken-3" });
   });
 
   const sendEmail = () => {
@@ -34,11 +34,8 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (document.querySelector(".invalid")) {
-      console.log("invalid input");
-    } else {
-      sendEmail();
-    }
+    // sendEmail();
+    console.log(data);
   };
 
   return (
