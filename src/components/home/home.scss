@@ -46,15 +46,26 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  div {
-    div {
-      img {
-        height: var(--strip-height);
-        width: auto;
-      }
-    }
+}
+
+.logo {
+  flex: auto;
+}
+
+@media all and (orientation: "portrait") {
+  .logo {
+    max-width: 80vw;
+    max-height: 30vh;
   }
 }
+
+@media all and (orientation: "landscape") {
+  .logo {
+    max-height: 80vh;
+    max-width: 60vw;
+  }
+}
+
 @media all and (max-width: 992px) {
   .home-grid-container,
   .home-grid-container_2 {
@@ -65,10 +76,6 @@
     height: fit-content;
     div {
       div {
-        img {
-          max-width: 90vw;
-          height: auto;
-        }
         h2 {
           text-align: center;
         }
