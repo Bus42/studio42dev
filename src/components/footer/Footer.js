@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col l6 s12">
-            <h5 className="white-text">Studio42 Web Development</h5>
+            <h5 className="white-text footer-text">Studio42 Web Development</h5>
 
             <p className="white-text text-darken-2">
               <a href="mailto:greg@studio42dev.com" target="mailtogreg">
@@ -40,7 +40,7 @@ const Footer = () => {
               Contact me today to discuss a tailored solution for your business.
             </p>
           </div>
-          <div className="col l4 offset-l2 s12">
+          <div className="col l4 offset-l2 s12 hide-on-med-and-down">
             <h5 className="white-text">Links</h5>
             <ul>
               <li>

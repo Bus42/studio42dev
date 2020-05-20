@@ -17,9 +17,11 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          /** Confirm submission via modal, clear form */
         },
         (error) => {
           console.log(error.text);
+          /** Display error modal, do not clear form */
         }
       );
   };
@@ -37,7 +39,9 @@ export default function Contact() {
     <div id="contact" className="row">
       <form id="contact_form" className="col s12" onSubmit={handleSubmit}>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="firstName">First Name</label>
+          <label className="active" htmlFor="firstName">
+            First Name
+          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -53,7 +57,9 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="lastName">Last Name</label>
+          <label className="active" htmlFor="lastName">
+            Last Name
+          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -69,7 +75,9 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="email">Email</label>
+          <label className="active" htmlFor="email">
+            Email
+          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -110,7 +118,9 @@ export default function Contact() {
           </select>
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="comments">Additional Comments</label>
+          <label className="active" htmlFor="comments">
+            Additional Comments
+          </label>
           <textarea
             onChange={(e) => {
               let newData = { ...data };
