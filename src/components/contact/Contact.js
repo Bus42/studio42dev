@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contact.scss";
+import Modal from "./Modal";
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -11,6 +12,18 @@ export default function Contact() {
     reason: "default",
     comments: "Tell me a little more",
   });
+
+  const clearForm = () => {
+    const defaults = {
+      firstName: "First Name",
+      lastName: "Last Name",
+      email: "email@provider.com",
+      reason: "default",
+      comments: "Tell me a little more",
+    }
+    setData(defaults);
+    document.getElementById("contact_form").reset();
+  };
 
   useEffect(() => {
     const selectEls = document.querySelectorAll(".select");
@@ -23,7 +36,8 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
-          /** Confirm submission via modal, clear form */
+          showConfirm();
+          clearForm();
         },
         (error) => {
           console.log(error.text);
@@ -32,19 +46,21 @@ export default function Contact() {
       );
   };
 
+  const showConfirm = () => {
+    const confirmModal = document.querySelector("#confirm-modal");
+    const modalInstance = M.Modal.getInstance(confirmModal);
+    modalInstance.open();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // sendEmail();
-    console.log(data);
+    sendEmail();
   };
 
   return (
     <div id="contact" className="row">
       <form id="contact_form" className="col s12" onSubmit={handleSubmit}>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="firstName">
-            First Name
-          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -60,9 +76,6 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="lastName">
-            Last Name
-          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -78,9 +91,6 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="email">
-            Email
-          </label>
           <input
             className="validate"
             onChange={(e) => {
@@ -95,9 +105,6 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="reason">
-            How can I help?
-          </label>
           <select
             id="reason"
             name="reason"
@@ -109,7 +116,7 @@ export default function Contact() {
             defaultValue={data.reason}
           >
             <option value="default" disabled>
-              Choose an option
+              What can I do for you?
             </option>
             <option value="needs some work on their website">
               My website needs some work
@@ -122,9 +129,6 @@ export default function Contact() {
           </select>
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="comments">
-            Additional Comments
-          </label>
           <textarea
             onChange={(e) => {
               let newData = { ...data };
@@ -146,6 +150,7 @@ export default function Contact() {
           </button>
         </div>
       </form>
+      <Modal clearForm={clearForm} />
     </div>
   );
 }
