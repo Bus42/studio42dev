@@ -13,7 +13,7 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    const elems = document.querySelectorAll("select");
+    const elems = document.querySelectorAll(".select");
     M.FormSelect.init(elems, { classes: "white-text text-darken-3" });
   });
 
@@ -102,6 +102,7 @@ export default function Contact() {
             How can I help?
           </label>
           <select
+            id="reason"
             name="reason"
             onChange={(e) => {
               let newData = { ...data };
