@@ -110,7 +110,7 @@ export default function Contact() {
           </select>
         </div>
         <div className="input-field col s10 offset-s1">
-          <label htmlFor="comments">Additional Comments</label>
+          <label className="active" htmlFor="comments">Additional Comments</label>
           <textarea
             onChange={(e) => {
               let newData = { ...data };
