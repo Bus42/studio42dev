@@ -8,7 +8,7 @@ export default function Contact() {
     lastName: "Last Name",
     email: "email@provider.com",
     reason: "default",
-    comments: "",
+    comments: "Tell me a little more",
   });
 
   const sendEmail = () => {
@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <div id="contact" className="row">
       <form id="contact_form" className="col s12" onSubmit={handleSubmit}>
-        <div className="input-field col s5 offset-s1">
+        <div className="input-field col s10 offset-s1">
           <label htmlFor="firstName">First Name</label>
           <input
             className="validate"
@@ -52,7 +52,7 @@ export default function Contact() {
             placeholder={data.firstName}
           />
         </div>
-        <div className="input-field col s5">
+        <div className="input-field col s10 offset-s1">
           <label htmlFor="lastName">Last Name</label>
           <input
             className="validate"
@@ -119,6 +119,7 @@ export default function Contact() {
             }}
             name="comments"
             className="materialize-textarea"
+            placeholder={data.comments}
           ></textarea>
         </div>
         <div className="col s8 offset-s1">

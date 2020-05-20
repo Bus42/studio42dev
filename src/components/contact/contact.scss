@@ -1,5 +1,4 @@
 #contact{
-    min-height: 100%;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -7,6 +6,7 @@
     padding: 60px 0;
     background-image: url('../../images/parallax_images/code/code.jpg');
     background-size: cover;
+    margin: 0px;
 }
 
 input {
