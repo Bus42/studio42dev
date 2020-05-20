@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const ParallaxStrip = (props) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    return window.removeEventListener("resize", handleResize);
   });
 
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
