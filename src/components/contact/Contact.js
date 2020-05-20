@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
+import M from "materialize-css";
 import "./contact.scss";
 
 export default function Contact() {
@@ -9,6 +10,11 @@ export default function Contact() {
     email: "email@provider.com",
     reason: "default",
     comments: "Tell me a little more",
+  });
+
+  useEffect(() => {
+    const elems = document.querySelectorAll("select");
+    M.FormSelect.init(elems, { classes: "white-text text-darken-3" });
   });
 
   const sendEmail = () => {

@@ -37,10 +37,10 @@ const Footer = () => {
                   <i className="material-icons">mail</i>
                 </button>
               </a>
-              Contact me today to discuss a tailored solution for your business.
+              Contact me today to discuss a tailored solution for your business needs.
             </p>
           </div>
-          <div className="col l4 offset-l2 s12 hide-on-med-and-down">
+          <div className="col l4 offset-l2 s12 hide-on-small-only">
             <h5 className="white-text">Links</h5>
             <ul>
               <li>
