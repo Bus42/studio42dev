@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const ParallaxStrip = (props) => {
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, {passive: true});
     return window.removeEventListener("resize", handleResize);
   });
 
