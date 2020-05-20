@@ -1,8 +1,10 @@
 #contact{
     background-image: url('../../images/pen/pen.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: var(--grey);
+    background-size: 100vh;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: black;
     margin: 0px;
     padding: 60px 0;
 }
