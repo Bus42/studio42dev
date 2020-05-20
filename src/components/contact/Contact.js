@@ -13,11 +13,7 @@ export default function Contact() {
 
   const sendEmail = () => {
     emailjs
-      .send(
-        "default_service",
-        "feedback", data,
-        "user_E6Sw8jgkSYgDQSn8TxTYv"
-      )
+      .send("default_service", "feedback", data, "user_E6Sw8jgkSYgDQSn8TxTYv")
       .then(
         (result) => {
           console.log(result.text);
@@ -28,7 +24,8 @@ export default function Contact() {
       );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (document.querySelector(".invalid")) {
       console.log("invalid input");
     } else {
@@ -37,110 +34,103 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact">
-      <div className="card">
-        <div className="card-content">
-          <div className="card-title">
-            <h4>Thanks for reaching out!</h4>
-          </div>
-          <p>
-            Fill out the form below and I will contact you as soon as possible.
-          </p>
-          <div className="card-content">
-            <form id="contact_form" onSubmit={handleSubmit}>
-              <div className="input-field">
-                <input
-                  className="validate"
-                  onChange={(e) => {
-                    let newData = { ...data };
-                    newData.firstName = e.target.value;
-                    setData(newData);
-                  }}
-                  required
-                  minLength="2"
-                  type="text"
-                  name="firstName"
-                  placeholder={data.firstName}
-                />
-                <input
-                  className="validate"
-                  onChange={(e) => {
-                    let newData = { ...data };
-                    newData.lastName = e.target.value;
-                    setData(newData);
-                  }}
-                  required
-                  minLength="2"
-                  type="text"
-                  name="lastName"
-                  placeholder={data.lastName}
-                />
-                <label className="active" >What's your name?</label>
-              </div>
-              <div className="input-field">
-                <input
-                  className="validate"
-                  onChange={(e) => {
-                    let newData = { ...data };
-                    newData.email = e.target.value;
-                    setData(newData);
-                  }}
-                  type="email"
-                  name="email"
-                  placeholder={data.email}
-                />
-                <label>Email</label>
-              </div>
-              <div className="input-field">
-                <select
-                  onChange={(e) => {
-                    let newData = { ...data };
-                    newData.reason = e.target.value;
-                    setData(newData);
-                  }}
-                  required
-                  defaultValue={data.reason}
-                >
-                  <option value="default" disabled>
-                    Choose an option
-                  </option>
-                  <option value="needs some work on their website">
-                    My website needs some work
-                  </option>
-                  <option value="needs a new website">I need a website</option>
-                  <option value="has a question for you">
-                    I'd like to ask a question
-                  </option>
-                  <option value="has some feedback for you">
-                    I have a comment
-                  </option>
-                </select>
-                <label>How can I help?</label>
-              </div>
-              <div className="row">
-                <div className="input-field col s12">
-                  <textarea
-                    onChange={(e) => {
-                      let newData = { ...data };
-                      newData.comments = e.target.value;
-                      setData(newData);
-                    }}
-                    id="comments"
-                    className="materialize-textarea"
-                  ></textarea>
-                  <label htmlFor="comments">Additional Comments</label>
-                </div>
-              </div>
-            </form>
-            <button
-              className="btn waves-effect waves-light grey darken-3 white-text text-darken-2 right"
-              onClick={handleSubmit}
-            >
-              Submit
-            </button>
-          </div>
+    <div id="contact" className="row">
+      <form id="contact_form" className="col s12" onSubmit={handleSubmit}>
+        <div className="input-field col s5 offset-s1">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            className="validate"
+            onChange={(e) => {
+              let newData = { ...data };
+              newData.firstName = e.target.value;
+              setData(newData);
+            }}
+            required
+            minLength="2"
+            type="text"
+            name="firstName"
+            placeholder={data.firstName}
+          />
         </div>
-      </div>
+        <div className="input-field col s5">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            className="validate"
+            onChange={(e) => {
+              let newData = { ...data };
+              newData.lastName = e.target.value;
+              setData(newData);
+            }}
+            required
+            minLength="2"
+            type="text"
+            name="lastName"
+            placeholder={data.lastName}
+          />
+        </div>
+        <div className="input-field col s10 offset-s1">
+          <label htmlFor="email">Email</label>
+          <input
+            className="validate"
+            onChange={(e) => {
+              let newData = { ...data };
+              newData.email = e.target.value;
+              setData(newData);
+            }}
+            type="email"
+            name="email"
+            placeholder={data.email}
+          />
+        </div>
+        <div className="input-field col s10 offset-s1">
+          <label className="active" htmlFor="reason">
+            How can I help?
+          </label>
+          <select
+            name="reason"
+            onChange={(e) => {
+              let newData = { ...data };
+              newData.reason = e.target.value;
+              setData(newData);
+            }}
+            required
+            defaultValue={data.reason}
+          >
+            <option value="default" disabled>
+              Choose an option
+            </option>
+            <option value="needs some work on their website">
+              My website needs some work
+            </option>
+            <option value="needs a new website">I need a website</option>
+            <option value="has a question for you">
+              I'd like to ask a question
+            </option>
+            <option value="has some feedback for you">I have a comment</option>
+          </select>
+        </div>
+        <div className="input-field col s10 offset-s1">
+          <label htmlFor="comments">Additional Comments</label>
+          <textarea
+            onChange={(e) => {
+              let newData = { ...data };
+              newData.comments = e.target.value;
+              setData(newData);
+            }}
+            name="comments"
+            className="materialize-textarea"
+          ></textarea>
+        </div>
+        <div className="col s8 offset-s1">
+          <button
+            type="submit"
+            className="btn waves-effect waves-light grey darken-3 white-text text-darken-2"
+            onSubmit={handleSubmit}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

@@ -9,6 +9,19 @@
     background-size: cover;
 }
 
+input {
+    border-radius: 5px !important;
+    color: whitesmoke;
+}
+
+.select-dropdown, textarea {
+    color: whitesmoke;
+}
+
+label {
+    color: whitesmoke !important;
+}
+
 @media all and (min-width: 1920px) and (max-width: 3839px)  {
     #contact {
         background-image: url('../../images/parallax_images/code/code_3840.jpg');

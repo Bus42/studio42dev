@@ -6,7 +6,11 @@
     padding: 0;
     box-sizing: border-box;
     --header-font: 'Ubuntu', sans-serif;
-    --grey: #757575;
+    --grey: #424242;
+}
+
+body {
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
