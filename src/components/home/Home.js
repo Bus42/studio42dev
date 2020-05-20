@@ -58,7 +58,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image_2 valign-wrapper">
-            <img className="logo" src={react} alt="multiple size displays" />
+            <img className="logo smaller" src={react} alt="multiple size displays" />
           </div>
         </div>
       </div>

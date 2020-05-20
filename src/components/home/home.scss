@@ -49,6 +49,10 @@
   flex: auto;
 }
 
+.smaller {
+  transform: scale(.8);
+}
+
 @media all and (orientation: "portrait") {
   .logo {
     max-width: 80vw;
