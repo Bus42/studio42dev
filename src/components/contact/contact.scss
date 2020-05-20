@@ -1,12 +1,9 @@
 #contact{
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 60px 0;
     background-image: url('../../images/parallax_images/code/code.jpg');
     background-size: cover;
+    background-color: var(--grey);
     margin: 0px;
+    height: 100vh;
 }
 
 input {
