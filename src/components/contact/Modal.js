@@ -7,6 +7,10 @@ const Modal = (props) => {
       dismissable: true
     };
     M.Modal.init(Modal, options);
+    const abortcontroller = new AbortController();
+    return function cleanup() {
+      abortcontroller.abort();
+    }
   });
   return (
     <div 
