@@ -1,6 +1,4 @@
-#home {
-  --strip-height: 380px;
-}
+
 .home-grid-container {
   display: grid;
   grid-template-columns: 40px 0.8fr 1.2fr 40px;
@@ -33,7 +31,6 @@
   align-items: center;
 }
 .parallax-container {
-  height: var(--strip-height);
   .parallax {
     img {
       width: 100vw;
@@ -55,14 +52,20 @@
 @media all and (orientation: "portrait") {
   .logo {
     max-width: 80vw;
-    max-height: 30vh;
+    max-height: 40vh;
+  }
+  .parallax-container {
+    height: 30vh;
   }
 }
 
 @media all and (orientation: "landscape") {
   .logo {
-    max-height: 80vh;
+    max-height: 60vh;
     max-width: 60vw;
+  }
+  .parallax-container {
+    height: 50vh;
   }
 }
 
@@ -81,8 +84,5 @@
         }
       }
     }
-  }
-  .parallax-container {
-    height: 40vw;
   }
 }
