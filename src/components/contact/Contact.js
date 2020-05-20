@@ -37,7 +37,7 @@ export default function Contact() {
     <div id="contact" className="row">
       <form id="contact_form" className="col s12" onSubmit={handleSubmit}>
         <div className="input-field col s10 offset-s1">
-          <label htmlFor="firstName">First Name</label>
+          <label className="active" htmlFor="firstName">First Name</label>
           <input
             className="validate"
             onChange={(e) => {
