@@ -53,7 +53,7 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label htmlFor="lastName">Last Name</label>
+          <label className="active" htmlFor="lastName">Last Name</label>
           <input
             className="validate"
             onChange={(e) => {
@@ -69,7 +69,7 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label htmlFor="email">Email</label>
+          <label className="active" htmlFor="email">Email</label>
           <input
             className="validate"
             onChange={(e) => {
@@ -83,7 +83,7 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <label className="active" htmlFor="reason">
+          <label className="active" className="active" htmlFor="reason">
             How can I help?
           </label>
           <select
