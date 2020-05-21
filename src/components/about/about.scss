@@ -1,3 +1,9 @@
 #about {
     margin: 60px auto;
+    div.row {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
