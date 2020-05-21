@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import M from "materialize-css";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import "materialize-css/dist/css/materialize.min.css";
@@ -12,9 +11,6 @@ import Footer from "./components/footer/Footer";
 import NotFound from "./NotFound";
 
 function App() {
-  useEffect(() => {
-    M.AutoInit();
-  });
   return (
     <div className="App">
       <Router>

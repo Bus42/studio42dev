@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 
-const Modal = (props) => {
+const Modal = () => {
   useEffect(() => {
-    const options = {
-      dismissable: true
-    };
-    M.Modal.init(Modal, options);
+    M.AutoInit();
     const abortcontroller = new AbortController();
     return function cleanup() {
       abortcontroller.abort();
-    }
+    };
   });
   return (
-    <div 
-    ref={Modal => Modal}
-    id="confirm-modal"
-    className="modal confirm-modal"
+    <div
+      ref={(Modal) => Modal}
+      id="confirm-modal"
+      className="modal confirm-modal"
     >
       <div className="modal-content">
         <h4>Success!</h4>

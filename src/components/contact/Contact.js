@@ -15,12 +15,11 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    const selectEls = document.querySelectorAll(".select");
-    M.FormSelect.init(selectEls, { classes: "white-text text-darken-3" });
+    M.AutoInit();
     const abortcontroller = new AbortController();
     return function cleanup() {
       abortcontroller.abort();
-    }
+    };
   });
 
   const clearForm = () => {
@@ -30,7 +29,7 @@ export default function Contact() {
       email: "email@provider.com",
       reason: "default",
       comments: "Tell me a little more",
-    }
+    };
     setData(defaults);
     document.getElementById("contact_form").reset();
   };
