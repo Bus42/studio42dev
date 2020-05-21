@@ -9,15 +9,20 @@
       name="description"
       content="Custom-built Progressive Web Applications designed for accessibility and speed"
     />
+    <!-- do not cache html. this does not affect assets -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons-192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Studio42Dev</title>
-    <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!--Import materialize.css-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -28,33 +33,16 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
     ></script>
-    <script async defer type="text/javascript">
-      (function () {
-        emailjs.init("user_E6Sw8jgkSYgDQSn8TxTYv");
-      })();
-    </script>
   </head>
   <body>
-    <div id="fb-root"></div>
-    <script
-      async
-      defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"
-    ></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="/__/firebase/7.14.3/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script
+    <script type="text/babel" src="/__/firebase/7.14.3/firebase-app.js"></script>
+    <script type="text/babel"
       async
       defer
       src="/__/firebase/7.14.3/firebase-analytics.js"
     ></script>
-
-    <!-- Initialize Firebase -->
-    <script async defer src="/__/firebase/init.js"></script>
+    <script type="text/babel" async defer src="/__/firebase/init.js"></script>
   </body>
 </html>

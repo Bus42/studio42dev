@@ -1,0 +1,17 @@
+#reason_dropdown {
+  li :hover {
+    color: var(--grey);
+  }
+  li {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    i {
+      margin-left: 1em !important;
+    }
+  }
+}
+#dropdown_trigger {
+    width: 198px;
+}

@@ -1,6 +1,4 @@
-#home {
-  --strip-height: 380px;
-}
+
 .home-grid-container {
   display: grid;
   grid-template-columns: 40px 0.8fr 1.2fr 40px;
@@ -33,7 +31,6 @@
   align-items: center;
 }
 .parallax-container {
-  height: var(--strip-height);
   .parallax {
     img {
       width: 100vw;
@@ -46,15 +43,36 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  div {
-    div {
-      img {
-        height: var(--strip-height);
-        width: auto;
-      }
-    }
+}
+
+.logo {
+  flex: auto;
+}
+
+.smaller {
+  transform: scale(.8);
+}
+
+@media all and (orientation: "portrait") {
+  .logo {
+    max-width: 80vw;
+    max-height: 40vh;
+  }
+  .parallax-container {
+    height: 30vh;
   }
 }
+
+@media all and (orientation: "landscape") {
+  .logo {
+    max-height: 60vh;
+    max-width: 60vw;
+  }
+  .parallax-container {
+    height: 50vh;
+  }
+}
+
 @media all and (max-width: 992px) {
   .home-grid-container,
   .home-grid-container_2 {
@@ -65,17 +83,10 @@
     height: fit-content;
     div {
       div {
-        img {
-          max-width: 90vw;
-          height: auto;
-        }
         h2 {
           text-align: center;
         }
       }
     }
-  }
-  .parallax-container {
-    height: 40vw;
   }
 }

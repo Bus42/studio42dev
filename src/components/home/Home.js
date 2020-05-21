@@ -14,6 +14,10 @@ const Home = () => {
   useEffect(() => {
     const elems = document.querySelectorAll(".parallax");
     M.Parallax.init(elems);
+    const abortcontroller = new AbortController();
+    return function cleanup() {
+      abortcontroller.abort();
+    }
   });
 
   return (
@@ -32,7 +36,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image valign-wrapper">
-            <img src={responsive} alt="multiple size displays" />
+            <img className="logo" src={responsive} alt="multiple size displays" />
           </div>
         </div>
       </div>
@@ -54,7 +58,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-image_2 valign-wrapper">
-            <img src={react} alt="multiple size displays" />
+            <img className="logo smaller" src={react} alt="multiple size displays" />
           </div>
         </div>
       </div>
@@ -85,7 +89,7 @@ const Home = () => {
             }}
             className="home-image valign-wrapper"
           >
-            <img src={firebase_logo} alt="Google Firebase logo" />
+            <img className="logo" src={firebase_logo} alt="Google Firebase logo" />
           </div>
         </div>
       </div>
