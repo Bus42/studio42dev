@@ -14,8 +14,8 @@ const cardinfo = [
     content: "content",
   },
   {
-    title: "Card 3",
-    content: "content",
+    title: "FreeCodeCamp",
+    content: "I have earned Front",
   },
   {
     title: "Card 4",
@@ -32,15 +32,42 @@ const About = () => {
       abortcontroller.abort();
     };
   });
+
+  const next = () => {
+    const cardCarousel = document.querySelector(".carousel");
+    const cardCarouselInstance = M.Carousel.getInstance(cardCarousel);
+    cardCarouselInstance.next();
+  };
+
+  const prev = () => {
+    const cardCarousel = document.querySelector(".carousel");
+    const cardCarouselInstance = M.Carousel.getInstance(cardCarousel);
+    cardCarouselInstance.prev();
+  };
+
   return (
-    <div id="about" className="carousel">
-      {cardinfo.map((card, index) => {
-        return (
-          <a href={`#${index}!`} className="carousel-item" key={index}>
-            <AboutCard title={card.title} content={card.content} />
-          </a>
-        );
-      })}
+    <div id="about">
+      <div id="carousel" className="carousel">
+        {cardinfo.map((card, index) => {
+          return (
+            <a
+              style={{ width: "350px" }}
+              href={`#${index}!`}
+              className="carousel-item"
+              key={index}
+            >
+              <AboutCard
+                title={card.title}
+                content={card.content}
+                next={next}
+                prev={prev}
+                length={cardinfo.length}
+                index={index}
+              />
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 };

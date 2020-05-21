@@ -1,9 +1,19 @@
 #about {
-    margin: 60px auto;
-    div.row {
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-        align-items: center;
-    }
+    background-color: black;
+    min-height: 500px;
+}
+
+.aos {
+    opacity: 1;
+    transition-property: opacity;
+}
+
+.aos_fade {
+    opacity: 0;
+}
+
+#btt_button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
