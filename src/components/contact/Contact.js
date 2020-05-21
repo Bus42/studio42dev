@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contact.scss";
 import Modal from "./Modal";
+import Select from "./Select";
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -11,6 +12,15 @@ export default function Contact() {
     email: "email@provider.com",
     reason: "default",
     comments: "Tell me a little more",
+  });
+
+  useEffect(() => {
+    const selectEls = document.querySelectorAll(".select");
+    M.FormSelect.init(selectEls, { classes: "white-text text-darken-3" });
+    const abortcontroller = new AbortController();
+    return function cleanup() {
+      abortcontroller.abort();
+    }
   });
 
   const clearForm = () => {
@@ -24,15 +34,6 @@ export default function Contact() {
     setData(defaults);
     document.getElementById("contact_form").reset();
   };
-
-  useEffect(() => {
-    const selectEls = document.querySelectorAll(".select");
-    M.FormSelect.init(selectEls, { classes: "white-text text-darken-3" });
-    const abortcontroller = new AbortController();
-    return function cleanup() {
-      abortcontroller.abort();
-    }
-  });
 
   const sendEmail = () => {
     emailjs
@@ -109,28 +110,7 @@ export default function Contact() {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <select
-            id="reason"
-            name="reason"
-            onChange={(e) => {
-              let newData = { ...data };
-              newData.reason = e.target.value;
-              setData(newData);
-            }}
-            defaultValue={data.reason}
-          >
-            <option value="default" disabled>
-              What can I do for you?
-            </option>
-            <option value="needs some work on their website">
-              My website needs some work
-            </option>
-            <option value="needs a new website">I need a website</option>
-            <option value="has a question for you">
-              I'd like to ask a question
-            </option>
-            <option value="has some feedback for you">I have a comment</option>
-          </select>
+          <Select data={data} setData={setData} />
         </div>
         <div className="input-field col s10 offset-s1">
           <textarea
