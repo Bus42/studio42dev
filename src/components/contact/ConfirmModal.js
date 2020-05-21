@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 
-const Modal = () => {
+const ConfirmModal = () => {
   useEffect(() => {
-    M.AutoInit();
+    const elems = document.querySelectorAll(".modal");
+    M.Modal.init(elems);
     const abortcontroller = new AbortController();
     return function cleanup() {
       abortcontroller.abort();
-    };
+    }
   });
   return (
-    <div
-      ref={(Modal) => Modal}
-      id="confirm-modal"
-      className="modal confirm-modal"
+    <div 
+    ref={Modal => Modal}
+    id="confirm-modal"
+    className="modal confirm-modal"
     >
       <div className="modal-content">
         <h4>Success!</h4>
@@ -28,4 +29,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default ConfirmModal;

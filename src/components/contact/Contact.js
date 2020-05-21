@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contact.scss";
-import Modal from "./Modal";
+import ConfirmModal from "./ConfirmModal";
 import Select from "./Select";
 
 export default function Contact() {
@@ -39,9 +39,9 @@ export default function Contact() {
       .send("default_service", "feedback", data, "user_E6Sw8jgkSYgDQSn8TxTYv")
       .then(
         (result) => {
-          console.log(result.text);
-          showConfirm();
           clearForm();
+          showConfirm();
+          console.log(result.text);
         },
         (error) => {
           console.log(error.text);
@@ -133,7 +133,7 @@ export default function Contact() {
           </button>
         </div>
       </form>
-      <Modal clearForm={clearForm} />
+      <ConfirmModal clearForm={clearForm} />
     </div>
   );
 }
