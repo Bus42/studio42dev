@@ -9,6 +9,7 @@ import Navbar from "./components/navbar/Navbar";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import NotFound from "./NotFound";
+import PP from "./components/PP";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/Contact">
               <Contact />
+            </Route>
+            <Route path="/privacy_policy">
+              <PP />
             </Route>
             <Route path="*" >
               <NotFound />

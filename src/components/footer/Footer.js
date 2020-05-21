@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./footer.scss";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const prevScrollY = useRef(0);
@@ -37,7 +38,8 @@ const Footer = () => {
                   <i className="material-icons">mail</i>
                 </button>
               </a>
-              Contact me today to discuss a tailored solution for your business needs.
+              Contact me today to discuss a tailored solution for your business
+              needs.
             </p>
           </div>
           <div className="col l4 offset-l2 s12 hide-on-small-only">
@@ -85,7 +87,10 @@ const Footer = () => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          © 2020 Studio42Dev
+          © 2020 Studio42Dev{" "}
+          <small>
+            <Link to="/privacy_policy">Privacy Policy</Link>
+          </small>
           <button
             className="btn waves-effect waves-light grey darken-3 white-text text-darken-2 right"
             onClick={(e) => {
