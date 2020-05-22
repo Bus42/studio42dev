@@ -1,19 +1,36 @@
 #about {
-    background-color: black;
-    min-height: 500px;
+  background-image: url("../../images/black_weave/black_weave.jpg");
+  background-size: contain;
+  background-color: black;
+  background-attachment: fixed;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .aos {
-    opacity: 1;
-    transition-property: opacity;
+  opacity: 1;
+  transition-property: opacity;
 }
 
 .aos_fade {
-    opacity: 0;
+  opacity: 0;
 }
 
 #btt_button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+#carousel {
+    min-height: 620px;
+    position: relative;
+    bottom: 110px;
+  #carousel_anchor {
+    width: 350px;
+  }
+}
+.cert {
+    width: 300px;
 }
