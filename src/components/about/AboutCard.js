@@ -8,7 +8,7 @@ const AboutCard = (props) => {
         <div style={{padding: "1.5em 0 3em 0"}} >
           <span>{props.content}</span>
         </div>
-        <div className="card-action">
+        {/* <div className="card-action">
           <button
             onClick={() => props.next()}
             className="btn btn-flat right grey darken-3 white-text text-darken-2 waves-effect waves-light"
@@ -23,7 +23,7 @@ const AboutCard = (props) => {
             <i className="material-icons left">arrow_back</i>
             <small>This Way</small>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
