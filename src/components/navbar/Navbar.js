@@ -33,13 +33,13 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             {/* <li>
-              <Link to="/Projects">Projects</Link>
+              <Link to="/projects">Projects</Link>
             </li> */}
             <li>
-              <Link to="/About">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/Contact">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -55,17 +55,17 @@ const Navbar = () => {
           </Link>
         </li>
         {/* <li>
-          <Link to="/Projects" className="white-text text-darken-2">
+          <Link to="/projects" className="white-text text-darken-2">
             Projects
           </Link>
         </li> */}
         <li>
-          <Link to="/About" className="white-text text-darken-2">
+          <Link to="/about" className="white-text text-darken-2">
             About
           </Link>
         </li>
         <li>
-          <Link to="/Contact" className="white-text text-darken-2">
+          <Link to="/contact" className="white-text text-darken-2">
             Contact
           </Link>
         </li>
