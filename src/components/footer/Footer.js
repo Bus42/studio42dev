@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import "./footer.scss";
 import { Link } from "react-router-dom";
 
@@ -7,11 +8,19 @@ const Footer = () => {
   const [goingUp, setGoingUp] = useState(false);
   const [position, setPosition] = useState(0);
 
+  let history = useHistory();
+
+  const handleCTAClick = () => {
+    history.push("/contact");
+  };
+
   useEffect(() => {
-    if (position === 0){setGoingUp(false)}
+    if (position === 0) {
+      setGoingUp(false);
+    }
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setPosition(currentScrollY)
+      setPosition(currentScrollY);
       if (prevScrollY.current < currentScrollY && goingUp) {
         setGoingUp(false);
       }
@@ -19,7 +28,6 @@ const Footer = () => {
         setGoingUp(true);
       }
       prevScrollY.current = currentScrollY;
-      console.log(position, goingUp ? " going up" : " going down");
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,7 +41,7 @@ const Footer = () => {
     });
     let btt = document.getElementById("btt_button");
     btt.classList.remove("aos");
-    btt.classList.add("aos_fade")
+    btt.classList.add("aos_fade");
   };
 
   return (
@@ -44,14 +52,13 @@ const Footer = () => {
             <h5 className="white-text footer-text">Studio42 Web Development</h5>
 
             <p className="white-text text-darken-2">
-              <a href="mailto:greg@studio42dev.com" target="mailtogreg">
-                <button
-                  className="btn waves-effect waves-light grey darken-3 white-text text-darken-2"
-                  style={{ margin: "0 1em 1em 0" }}
-                >
-                  <i className="material-icons">mail</i>
-                </button>
-              </a>
+              <button
+                onClick={handleCTAClick}
+                className="btn waves-effect waves-light grey darken-3 white-text text-darken-2"
+                style={{ margin: "0 1em 1em 0" }}
+              >
+                <i className="material-icons">mail</i>
+              </button>
               Contact me today to discuss a tailored solution for your business
               needs.
             </p>

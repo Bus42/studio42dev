@@ -17,7 +17,6 @@ const Select = (props) => {
   const handleClick = (e, iconText) => {
     const reason = e.target.text;
     const newIcon = iconText;
-    console.log(reason);
     setOption(reason);
     setIcon(newIcon);
     let newData = { ...props.data };
