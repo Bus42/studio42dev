@@ -5,22 +5,25 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const prevScrollY = useRef(0);
   const [goingUp, setGoingUp] = useState(false);
+  const [position, setPosition] = useState(0);
+
   useEffect(() => {
+    if (position === 0){setGoingUp(false)}
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      setPosition(currentScrollY)
       if (prevScrollY.current < currentScrollY && goingUp) {
         setGoingUp(false);
       }
       if (prevScrollY.current > currentScrollY && !goingUp) {
         setGoingUp(true);
       }
-
       prevScrollY.current = currentScrollY;
-      console.log(goingUp ? "up" : "down");
+      console.log(position, goingUp ? " going up" : " going down");
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [goingUp]);
+  }, [goingUp, position]);
 
   const scrollToTop = (e) => {
     e.preventDefault();
