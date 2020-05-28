@@ -22,6 +22,17 @@ const Footer = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [goingUp]);
 
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    let btt = document.getElementById("btt_button");
+    btt.classList.remove("aos");
+    btt.classList.add("aos_fade")
+  };
+
   return (
     <footer className="page-footer grey darken-3">
       <div className="container">
@@ -92,16 +103,17 @@ const Footer = () => {
             <Link to="/privacy_policy">Privacy Policy</Link>
           </small>
           <button
-            className="btn waves-effect waves-light grey darken-3 white-text text-darken-2 right"
+            id="btt_button"
+            className={
+              goingUp
+                ? "btn-floating waves-effect waves-light grey darken-3 white-text text-darken-2 right aos"
+                : "btn-floating waves-effect waves-light grey darken-3 white-text text-darken-2 right aos_fade"
+            }
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
+              scrollToTop(e);
             }}
           >
-            <i className="material-icons left">arrow_upward</i>Back to top
+            <i className="material-icons left">arrow_upward</i>
           </button>
         </div>
       </div>

@@ -15,9 +15,11 @@ const Navbar = () => {
     <div id="navbar">
       <nav className="grey darken-3">
         <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">
-            Studio42Dev
-          </Link>
+          <span style={{marginLeft: "4em"}} >
+            <Link to="/" className="brand-logo">
+              Studio42Dev
+            </Link>
+          </span>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a
             href="#"
@@ -32,10 +34,10 @@ const Navbar = () => {
             </li>
             {/* <li>
               <Link to="/Projects">Projects</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/About">About</Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/Contact">Contact</Link>
             </li>
@@ -56,14 +58,16 @@ const Navbar = () => {
           <Link to="/Projects" className="white-text text-darken-2">
             Projects
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/About" className="white-text text-darken-2">
             About
           </Link>
-        </li> */}
+        </li>
         <li>
-          <Link to="/Contact" className="white-text text-darken-2">Contact</Link>
+          <Link to="/Contact" className="white-text text-darken-2">
+            Contact
+          </Link>
         </li>
       </ul>
     </div>
