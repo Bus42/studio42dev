@@ -9,7 +9,7 @@ import Navbar from "./components/navbar/Navbar";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import NotFound from "./NotFound";
-import PP from "./components/PP";
+import PRIVACY_POLICY from "./components/PRIVACY_POLICY";
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
               <Contact />
             </Route>
             <Route path="/privacy_policy">
-              <PP />
+              <PRIVACY_POLICY />
             </Route>
             <Route path="*" >
               <NotFound />
