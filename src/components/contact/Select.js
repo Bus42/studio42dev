@@ -42,8 +42,8 @@ const Select = (props) => {
   ];
 
   return (
-    <div className="col s6" style={{ paddingLeft: "0" }} >
-      <select name="reason_select" id="reason_select" onChange={handleChange}>
+    <div className="col s12 m8 l6" style={{ paddingLeft: "0" }} >
+      <select name="reason_select" id="reason_select" onChange={handleChange} >
         {reasons.map((reason, index) => (
           <option
             value={reason.displayText}
