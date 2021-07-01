@@ -14,13 +14,16 @@ export default function Contact() {
     comments: "Tell me a little more",
   });
 
+  const USER_ID = "user_E6Sw8jgkSYgDQSn8TxTYv"
+
   useEffect(() => {
     M.AutoInit();
     const abortcontroller = new AbortController();
+    emailjs.init(USER_ID);
     return function cleanup() {
       abortcontroller.abort();
     };
-  });
+  }, []);
 
   const clearForm = () => {
     const defaults = {
@@ -36,15 +39,15 @@ export default function Contact() {
 
   const sendEmail = () => {
     emailjs
-      .send("default_service", "feedback", data, "user_E6Sw8jgkSYgDQSn8TxTYv")
+      .send("default_service", "feedback", data)
       .then(
-        (result) => {
+        (res) => {
+          console.log("Success!", res.status, res.text);
           clearForm();
           showConfirm();
-          console.log(result.text);
         },
-        (error) => {
-          console.log(error.text);
+        (err) => {
+          console.log(err.text);
           /** Display error modal, do not clear form */
         }
       );
