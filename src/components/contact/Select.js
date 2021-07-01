@@ -1,84 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import M from "materialize-css";
 import "./select.scss";
 
 const Select = (props) => {
-  const [option, setOption] = useState("How can I help?");
-  const [icon, setIcon] = useState("arrow_drop_down");
-
   useEffect(() => {
-    M.AutoInit();
-    const abortcontroller = new AbortController();
-    return function cleanup() {
-      abortcontroller.abort();
-    };
-  });
+    const elem = document.querySelector("select");
+    M.FormSelect.init(elem);
+    let instance = M.FormSelect.getInstance(elem);
+    return instance.destroy();
+  }, []);
 
-  const handleClick = (e, iconText) => {
-    const reason = e.target.text;
-    const newIcon = iconText;
-    setOption(reason);
-    setIcon(newIcon);
+  const handleChange = (e) => {
+    e.preventDefault();
+    const reason = e.target.value;
     let newData = { ...props.data };
     newData.reason = reason;
     props.setData(newData);
   };
 
+  const reasons = [
+    {
+      displayText: "How Can I Help?",
+      dataIcon: require("./icons/contact_support.svg"),
+    },
+    {
+      displayText: "Update Existing",
+      dataIcon: require("./icons/code.svg"),
+    },
+    {
+      displayText: "New Website",
+      dataIcon: require("./icons/devices.svg"),
+    },
+    {
+      displayText: "Question",
+      dataIcon: require("./icons/help_outline.svg"),
+    },
+    {
+      displayText: "Feedback",
+      dataIcon: require("./icons/comment.svg"),
+    },
+  ];
+
   return (
-    <div id="select">
-      <button
-        id="dropdown_trigger"
-        className="dropdown-trigger btn grey darken-3 white-text text-darken-2"
-        data-target="reason_dropdown"
-      >
-        <i className="material-icons left">{icon}</i>
-        {option}
-      </button>
-      <ul
-        id="reason_dropdown"
-        className="dropdown-content grey darken-3 white-text text-darken-2"
-      >
-        <li>
-          <i className="material-icons white-text left">code</i>
-          <a
-            style={{ display: "inline", color: "whitesmoke" }}
-            onClick={(e) => handleClick(e, "code")}
-            href="#!"
+    <div className="col s6" style={{ paddingLeft: "0" }} >
+      <select name="reason_select" id="reason_select" onChange={handleChange}>
+        {reasons.map((reason, index) => (
+          <option
+            value={reason.displayText}
+            key={`contact_reasons_${index}`}
+            data-icon={reason.dataIcon}
           >
-            Update Existing
-          </a>
-        </li>
-        <li>
-          <i className="material-icons white-text left">devices</i>
-          <a
-            style={{ display: "inline", color: "whitesmoke" }}
-            onClick={(e) => handleClick(e, "devices")}
-            href="#!"
-          >
-            New Website
-          </a>
-        </li>
-        <li>
-          <i className="material-icons white-text left">help</i>
-          <a
-            style={{ display: "inline", color: "whitesmoke" }}
-            onClick={(e) => handleClick(e, "help")}
-            href="#!"
-          >
-            Question
-          </a>
-        </li>
-        <li>
-          <i className="material-icons white-text left">comment</i>
-          <a
-            style={{ display: "inline", color: "whitesmoke" }}
-            onClick={(e) => handleClick(e, "comment")}
-            href="#!"
-          >
-            Feedback
-          </a>
-        </li>
-      </ul>
+            {reason.displayText}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
