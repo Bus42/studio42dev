@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contactForm.scss";
 import ConfirmModal from "./ConfirmModal";
 import Select from "./Select";
 import { USER_ID } from "../../constants/data";
+import useForm from "../../hooks/useForm";
 
 const ContactForm = () => {
-  const initialFormValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    reason: "",
-    comments: "",
-  };
+    const initialFormValues = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      reason: "How Can I Help?",
+      comments: "",
+    };
 
-  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formValues, setFormValues, handleChange] = useForm(initialFormValues);
+
 
   const clearForm = () => {
     setFormValues(initialFormValues);
@@ -25,19 +27,14 @@ const ContactForm = () => {
     const confirmModal = document.querySelector("#confirm-modal");
     const modalInstance = M.Modal.getInstance(confirmModal);
     modalInstance.open();
-  };
+};
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
     //send email, show confirmation, and clear form
     console.log(formValues);
-    // clearForm();
     showConfirm();
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    clearForm();
   };
 
   useEffect(() => {
@@ -93,7 +90,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="input-field col s10 offset-s1">
-          <Select data={formValues} setData={setFormValues} />
+          <Select formValues={formValues} handleChange={handleChange} />
         </div>
         <div className="input-field col s10 offset-s1">
           <textarea
