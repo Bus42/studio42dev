@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import M from "materialize-css";
 
-const ConfirmModal = () => {
+const ConfirmModal = (props) => {
   useEffect(() => {
     const elems = document.querySelectorAll(".modal");
     M.Modal.init(elems);
@@ -20,7 +20,7 @@ const ConfirmModal = () => {
         <h4>Success!</h4>
         <p>Thanks for taking the time to reach out. I'll be in touch soon.</p>
         <div className="modal-footer">
-          <button className="modal-close waves-effect waves-light btn-flat">
+          <button onClick={props.clearForm} className="modal-close waves-effect waves-light btn-flat">
             Dismiss
           </button>
         </div>

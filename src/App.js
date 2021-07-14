@@ -6,7 +6,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/navbar/Navbar";
-import Contact from "./components/contact/Contact";
+import ContactForm from "./components/contact/ContactForm";
 import Footer from "./components/footer/Footer";
 import NotFound from "./NotFound";
 import PRIVACY_POLICY from "./components/PRIVACY_POLICY";
@@ -25,7 +25,7 @@ function App() {
               <About />
             </Route>
             <Route path="/contact">
-              <Contact />
+              <ContactForm />
             </Route>
             <Route path="/privacy_policy">
               <PRIVACY_POLICY />
