@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import M from "materialize-css";
 import "./select.scss";
 
@@ -26,27 +26,17 @@ const reasons = [
 ];
 
 const Select = ({ formValues, handleChange }) => {
-  const [currentReason, setCurrentReason] = useState(reasons[0]);
-
   useEffect(() => {
     const elem = document.querySelector("select");
     M.FormSelect.init(elem);
     let instance = M.FormSelect.getInstance(elem);
     return instance.destroy();
   }, []);
-  
-  useEffect(() => {
-    setCurrentReason(formValues.reason);
-  }, [formValues])
 
   return (
     <div className="col s12 m8 l6" style={{ paddingLeft: "0" }}>
-      <select
-        name="reason"
-        id="reason"
-        onChange={handleChange}
-        value={currentReason}
-      >
+      <label htmlFor="reason">Reason for contact</label>
+      <select name="reason" id="reason" onChange={handleChange}>
         {reasons.map((reason, index) => (
           <option
             value={reason.displayText}

@@ -16,7 +16,7 @@ const ContactForm = () => {
       comments: "",
     };
 
-  const [formValues, handleChange] = useForm(initialFormValues);
+  const [formValues, handleChange, clearForm] = useForm(initialFormValues);
 
   const showConfirm = () => {
     const confirmModal = document.querySelector("#confirm-modal");
@@ -26,10 +26,11 @@ const ContactForm = () => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     //send email, show confirmation, and clear form
     console.log(formValues);
     showConfirm();
-    // clearForm();
+    clearForm();
   };
 
   useEffect(() => {
@@ -50,49 +51,50 @@ const handleSubmit = (e) => {
         onSubmit={handleSubmit}
       >
         <div className="input-field col s10 offset-s1">
+          <label htmlFor="firstName">First Name</label>
           <input
             type="text"
             className="validate"
             required
             minLength="2"
             name="firstName"
-            placeholder="First Name"
             onChange={handleChange}
             value={formValues.firstName}
           />
         </div>
         <div className="input-field col s10 offset-s1">
+          <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
             className="validate"
             required
             minLength="2"
             name="lastName"
-            placeholder="Last Name"
             onChange={handleChange}
             value={formValues.lastName}
           />
         </div>
         <div className="input-field col s10 offset-s1">
+          <label htmlFor="email">email@provider.com</label>
           <input
             type="email"
             className="validate"
             required
             name="email"
-            placeholder="email@provider.com"
             onChange={handleChange}
             value={formValues.email}
           />
         </div>
         <div className="input-field col s10 offset-s1">
+          {/** Create label with dynamic content in Select component */}
           <Select formValues={formValues} handleChange={handleChange} />
         </div>
         <div className="input-field col s10 offset-s1">
+          <label htmlFor="comments">Comments</label>
           <textarea
             className="materialize-textarea"
             required
             name="comments"
-            placeholder="Tell me a little more..."
             onChange={handleChange}
             value={formValues.comments}
           ></textarea>
@@ -106,7 +108,7 @@ const handleSubmit = (e) => {
           </button>
         </div>
       </form>
-      <ConfirmModal />
+      <ConfirmModal clearForm={clearForm} />
     </div>
   );
 };
