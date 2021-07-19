@@ -16,12 +16,7 @@ const ContactForm = () => {
       comments: "",
     };
 
-  const [formValues, setFormValues, handleChange] = useForm(initialFormValues);
-
-
-  const clearForm = () => {
-    setFormValues(initialFormValues);
-  };
+  const [formValues, handleChange] = useForm(initialFormValues);
 
   const showConfirm = () => {
     const confirmModal = document.querySelector("#confirm-modal");
@@ -34,7 +29,7 @@ const handleSubmit = (e) => {
     //send email, show confirmation, and clear form
     console.log(formValues);
     showConfirm();
-    clearForm();
+    // clearForm();
   };
 
   useEffect(() => {
@@ -111,7 +106,7 @@ const handleSubmit = (e) => {
           </button>
         </div>
       </form>
-      <ConfirmModal clearForm={clearForm} />
+      <ConfirmModal />
     </div>
   );
 };
