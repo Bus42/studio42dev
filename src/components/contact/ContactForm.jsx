@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contactForm.scss";
 import ConfirmModal from './ConfirmModal.jsx';
-import Select from "./Select";
+import Select from "./Select.jsx";
 import { USER_ID } from "../../constants/data";
 import useForm from "../../hooks/useForm";
 
@@ -17,7 +17,7 @@ const ContactForm = () => {
     comments: "",
   };
   
-  const [formValues, handleChange] = useForm(initialFormValues);
+  const [formValues, setFormValues, handleChange] = useForm(initialFormValues);
 
   const showConfirm = () => {
     const confirmModal = document.querySelector("#confirm-modal");
@@ -108,7 +108,7 @@ const handleSubmit = (e) => {
           </button>
         </div>
       </form>
-      <ConfirmModal />
+      <ConfirmModal setFormValues={setFormValues} initialFormValues={initialFormValues} />
     </div>
   );
 };
