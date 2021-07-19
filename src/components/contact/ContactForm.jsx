@@ -2,21 +2,22 @@ import React, { useEffect } from "react";
 import emailjs from "emailjs-com";
 import M from "materialize-css";
 import "./contactForm.scss";
-import ConfirmModal from "./ConfirmModal";
+import ConfirmModal from './ConfirmModal.jsx';
 import Select from "./Select";
 import { USER_ID } from "../../constants/data";
 import useForm from "../../hooks/useForm";
 
-const ContactForm = () => {
-    const initialFormValues = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      reason: "How Can I Help?",
-      comments: "",
-    };
 
-  const [formValues, handleChange, clearForm] = useForm(initialFormValues);
+const ContactForm = () => {
+  const initialFormValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    reason: "",
+    comments: "",
+  };
+  
+  const [formValues, handleChange] = useForm(initialFormValues);
 
   const showConfirm = () => {
     const confirmModal = document.querySelector("#confirm-modal");
@@ -30,7 +31,6 @@ const handleSubmit = (e) => {
     //send email, show confirmation, and clear form
     console.log(formValues);
     showConfirm();
-    clearForm();
   };
 
   useEffect(() => {
@@ -108,7 +108,7 @@ const handleSubmit = (e) => {
           </button>
         </div>
       </form>
-      <ConfirmModal clearForm={clearForm} />
+      <ConfirmModal />
     </div>
   );
 };

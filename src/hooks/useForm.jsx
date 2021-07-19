@@ -8,9 +8,7 @@ const useForm = (initialState) => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const clearForm = () => setFormValues(initialState);
-
-  return [formValues, handleChange, clearForm];
+  return [formValues, handleChange];
 };
 
 export default useForm;
